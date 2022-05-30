@@ -1,0 +1,22 @@
+body {
+  text-align: center;
+}
+
+.cell {
+  background-color: lightblue;
+  border: solid 1px teal;
+  float: left;
+  font-size: 18px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 600;
+  color: teal;
+  /* line-height: 1.6; */
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.board {
+  margin: 40px auto;
+}

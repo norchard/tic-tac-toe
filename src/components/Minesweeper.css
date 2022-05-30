@@ -1,0 +1,31 @@
+body {
+  margin-top: 100px;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  color: teal;
+}
+
+h1 {
+  font-size: 45px;
+  font-weight: 800;
+  color: lightgray;
+  margin-bottom: 0px;
+}
+
+button {
+  font-weight: 600;
+  font-size: 18px;
+  margin: 10px;
+  padding: 5px 10px;
+  color: teal;
+  background-color: white;
+  border: teal 2px solid;
+  border-radius: 5px;
+}
+
+button:hover {
+  outline: solid mediumturquoise 1px;
+  outline-offset: -3px;
+  cursor: pointer;
+}
