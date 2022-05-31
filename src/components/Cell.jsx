@@ -1,48 +1,38 @@
 import React from 'react'
-import './Cell.css'
 
 function Cell(props) {
-  const guessed = props.guesses[props.rowIndex][props.colIndex] == 1
   const style = {
-      height: props.cellSize,
-      width: props.cellSize,
-      fontSize: props.cellSize * .7,
-      lineHeight: '1.5em',
-    }
+    height: '38px',
+    width: '38px',
+    backgroundColor: 'lightblue',
+    border: '1px solid black',
+    float: 'left',
+    fontFamily: 'Helvetica',
+    fontWeight: '600',
+    fontSize: '28px',
+    lineHeight: '40px'
+  }
 
-  if (guessed)
+  if (props.value)
     return (
       <div
-        style={style}
-        className='cell guessed'>
-        { ["💣", props.lost ? "💥" : "🌾",1,2,3,4,5,6,7,8][props.value + 1] }
+      style={style}>
+        {props.value}
       </div>
     )
   else if (props.won)
     return (
       <div
-        style={style}
-        className='cell guessed'>
-        { ["🐶","🐸","🐱","🦊","🐵","🐷","🐹","🐼","🐨","🐻"][Math.floor(Math.random() * 10)] }
+      style={style}>
       </div>
     )
-  else if ( props.guesses[props.rowIndex][props.colIndex] == 2 )
+  else
     return (
       <div
-        style={style}
-        className="cell"
-        onContextMenu={(e) => props.onLeftClickHandler(e, props.rowIndex, props.colIndex)}>
-        🔒
-      </div>)
-  else
-    return(
-      <div
-        style={style}
-        className='cell clickable'
-        onClick={() => props.onClickHandler(props.rowIndex, props.colIndex)}
-        onContextMenu={(e) => props.onLeftClickHandler(e, props.rowIndex, props.colIndex)}>
+      style={style}
+      onClick={() => props.onClickHandler(props.row, props.col)}>
       </div>
     )
 }
 
-export default Cell
+export default Cell;

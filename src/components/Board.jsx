@@ -1,51 +1,38 @@
-import React, { useState, useEffect } from 'react'
-import './Board.css'
+import React from 'react'
 import Cell from './Cell.jsx'
 
 function Board(props) {
-  const [cellSize, setCellSize] = useState(28)
-  let style = {}
 
-  if (props.mines.length > 0){
-    style = {
-      height: (cellSize + 2) * props.mines.length,
-      width: (cellSize + 2) * props.mines.length,
-      border: 'solid 1px teal',
-      margin: '40px auto'
-    }
-  }
+  const player = props.xTurn ? 'X' : 'O'
 
-  let alert = ''
-  if (props.mines.length === 0) alert = 'Pick a size'
-  else if (props.won) alert = 'You won!'
-  else if (props.lost) alert = 'You lost!'
-  else alert = 'Mines: ' + props.mineNumber
+  console.log(props.board)
 
   return (
     <div>
-      <h3>{ alert }</h3>
+      <h2>{ props.won ? `${player} Won!` : (props.tie ? `Tie Game!` : `Turn: ${player}`) }</h2>
       <div
-        style={style}>
-        { props.mines.map( (row, rowIndex) =>
-            row.map( (value, colIndex) =>
-              <Cell
-                cellSize={cellSize}
-                lost={props.lost}
-                won={props.won}
-                rowIndex={rowIndex}
-                colIndex={colIndex}
-                key={[rowIndex, colIndex]}
-                guesses={props.guesses}
-                value={ value }
-                onClickHandler={props.onClickHandler}
-                onLeftClickHandler={props.onLeftClickHandler}
-              />
-            )
-        )}
+        style={{
+          textAlign: 'center',
+          display: 'inline-block',
+          width: '120px',
+          margin: '0 auto',
+          border: '1px solid black'
+        }}>
+        { props.board.map( (row, rowIndex) => {
+          return row.map( (value, colIndex) => {
+            return <Cell
+              tie = {props.tie}
+              won = {props.won}
+              onClickHandler = {props.onClickHandler}
+              row = {rowIndex}
+              col = {colIndex}
+              value = {value}
+            />
+          })
+        })}
       </div>
     </div>
-  )
+  );
+  }
 
-}
-
-export default Board
+  export default Board;

@@ -1,7 +1,7 @@
 {
-  "name": "minesweeper",
+  "name": "tic-tac-toe",
   "version": "1.0.0",
-  "description": "A minesweeper game",
+  "description": "A tic-tac-toe game",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
