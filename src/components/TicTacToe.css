@@ -6,6 +6,13 @@ body {
   color: teal;
 }
 
+h1 {
+  font-size: 45px;
+  font-weight: 800;
+  color: lightgray;
+  margin-bottom: 0px;
+}
+
 button {
   font-weight: 600;
   font-size: 18px;

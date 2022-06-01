@@ -16,7 +16,7 @@ function Board(props) {
           display: 'inline-block',
           width: '120px',
           margin: '0 auto',
-          border: '1px solid black'
+          border: '1px solid teal'
         }}>
         { props.board.map( (row, rowIndex) => {
           return row.map( (value, colIndex) => {

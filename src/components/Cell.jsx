@@ -5,7 +5,7 @@ function Cell(props) {
     height: '38px',
     width: '38px',
     backgroundColor: 'lightblue',
-    border: '1px solid black',
+    border: '1px solid teal',
     float: 'left',
     fontFamily: 'Helvetica',
     fontWeight: '600',
